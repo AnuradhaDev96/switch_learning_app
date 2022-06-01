@@ -11,7 +11,7 @@ jobs:
     - task: FlutterInstall@0
       inputs:
         channel: 'stable'
-        version: 'latest'
+        version: '3.0.1'
     
     - task: FlutterBuild@0
       inputs:
