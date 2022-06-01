@@ -1,3 +1,9 @@
+#!/bin/sh
+
+set -e
+export PATH=$BUILD_SOURCESDIRECTORY/flutter/bin:$BUILD_SOURCESDIRECTORY/flutter/bin/cache/dart-sdk/bin:$PATH
+
+
 install_flutter() {
   git clone -b stable https://github.com/flutter/flutter.git
 
@@ -27,3 +33,6 @@ build_app() {
 flutter_integration_test() {
     flutter test integration_test
 }
+
+
+"$@"
