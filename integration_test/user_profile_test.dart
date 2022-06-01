@@ -10,7 +10,7 @@ main() async {
 
   testWidgets('User profile test', (WidgetTester tester) async {
     app.main();
-    await tester.pumpAndSettle(const Duration(seconds: 10));
+    await tester.pumpAndSettle(const Duration(seconds: 5));
     await openUserAccountPage(tester);
   });
 }
