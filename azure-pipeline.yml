@@ -13,20 +13,20 @@ jobs:
     #     channel: 'stable'
     #     version: '3.0.1'
 
-    - script: pipelines/scriptw.sh install_flutter
+    - script: pipelines/fscripts.sh install_flutter
       displayName: Install Flutter
 
     # - task: FlutterBuild@0
     #   inputs:
     #     target: apk
         # projectDirectory: $(projectDirectory)
-    - script: pipelines/scripts.sh build_app
+    - script: pipelines/fscripts.sh build_app
       displayName: Build Flutter App
     
-    - script: pipelines/scripts.sh launch_avd
+    - script: pipelines/fscripts.sh launch_avd
       displayName: Launch AVD
 
-    - script: pipelines/scripts.sh flutter_integration_test 
+    - script: pipelines/fscripts.sh flutter_integration_test 
       displayName: 'Run integration tests'
   
     # - task: AndroidSigning@3
