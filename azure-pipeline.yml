@@ -13,10 +13,10 @@ jobs:
         channel: 'stable'
         version: 'latest'
     
-    # - task: FlutterBuild@0
-    #   inputs:
-    #     target: apk
-    #     projectDirectory: $(projectDirectory)
+    - task: FlutterBuild@0
+      inputs:
+        target: apk
+        # projectDirectory: $(projectDirectory)
 
     - script: pipelines/scripts.sh flutter_integration_test 
       displayName: 'Running flutter integration tests'
