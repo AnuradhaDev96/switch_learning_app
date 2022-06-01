@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:switch_learning_app/constants/colors.dart';
+
+import '../constants/colors.dart';
+import '../constants/widget_keys.dart';
+import 'user_account_screen.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({Key? key}) : super(key: key);
@@ -21,7 +24,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 IconButton(
-                  onPressed: () {},
+                  key: const Key(WidgetKeys.userProfileIconButton),
+                  onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const UserAccountScreen())),
                   icon: const Icon(
                     Icons.menu,
                     color: Colors.white,
