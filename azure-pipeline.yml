@@ -8,18 +8,26 @@ jobs:
     pool:
       vmImage: 'macOS-latest'
     steps:
-    - task: FlutterInstall@0
-      inputs:
-        channel: 'stable'
-        version: '3.0.1'
-    
-    - task: FlutterBuild@0
-      inputs:
-        target: apk
+    # - task: FlutterInstall@0
+    #   inputs:
+    #     channel: 'stable'
+    #     version: '3.0.1'
+
+    - script: pipelines/scripts.sh install_flutter
+      displayName: Install Flutter
+
+    # - task: FlutterBuild@0
+    #   inputs:
+    #     target: apk
         # projectDirectory: $(projectDirectory)
+    - script: pipelines/scripts.sh build_app
+      displayName: Build Flutter App
+    
+    - script: pipelines/scripts.sh launch_avd
+      displayName: Launch AVD
 
     - script: pipelines/scripts.sh flutter_integration_test 
-      displayName: 'Running flutter integration tests'
+      displayName: 'Run integration tests'
   
     # - task: AndroidSigning@3
     #   displayName: 'Signing and aligning APK file(s) **/*.apk'
