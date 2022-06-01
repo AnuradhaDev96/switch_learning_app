@@ -13,7 +13,7 @@ jobs:
     #     channel: 'stable'
     #     version: '3.0.1'
 
-    - script: pipelines/scripts.sh install_flutter
+    - script: pipelines/scriptw.sh install_flutter
       displayName: Install Flutter
 
     # - task: FlutterBuild@0
