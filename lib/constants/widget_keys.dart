@@ -6,4 +6,7 @@ class WidgetKeys {
 
   // Dashboard page
   static const String userProfileIconButton = 'userProfileIconButton';
+
+  //Onboarding screen item
+  static const String skipElevatedButton = 'skipElevatedButton';
 }

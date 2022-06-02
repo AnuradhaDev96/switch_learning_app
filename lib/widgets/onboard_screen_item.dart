@@ -114,6 +114,7 @@ class OnboardScreenItem extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 ElevatedButton(
+                  key: const Key(WidgetKeys.skipElevatedButton),
                   style: ButtonStyle(
                       backgroundColor:
                           MaterialStateProperty.all(subHeadlineColor),

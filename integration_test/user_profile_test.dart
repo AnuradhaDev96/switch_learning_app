@@ -10,8 +10,18 @@ main() async {
 
   testWidgets('User profile test', (WidgetTester tester) async {
     app.main();
-    await tester.pumpAndSettle(const Duration(seconds: 5));
-    await openUserAccountPage(tester);
+    await tester.pumpAndSettle(const Duration(seconds: 10));
+    // await Future.delayed(const Duration(seconds: 20));
+
+    final skipElevatedButton = find.byKey(const ValueKey(WidgetKeys.skipElevatedButton));
+    if(skipElevatedButton.precache()) {
+      await tester.tap(skipElevatedButton);
+      await tester.pumpAndSettle(const Duration(seconds: 5));
+      await openUserAccountPage(tester);
+    } else {
+      await openUserAccountPage(tester);
+    }
+    
   });
 }
 
