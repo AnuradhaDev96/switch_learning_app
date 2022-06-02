@@ -35,7 +35,7 @@ class _MyAppState extends State<MyApp> {
   
   @override
   void initState() {
-    getCurrentOnboardScreenPresentingValue();
+    // getCurrentOnboardScreenPresentingValue();
     super.initState();
   }
   
@@ -48,7 +48,8 @@ class _MyAppState extends State<MyApp> {
         scaffoldBackgroundColor: Colors.white,
         primarySwatch: Colors.blue,
       ),
-      home: widget.isPresented == true ? const DashboardScreen() : const HomeScreen(),
+      //home: widget.isPresented == true ? const DashboardScreen() : const HomeScreen(),
+      home: const DashboardScreen(),
     );
   }
 }
